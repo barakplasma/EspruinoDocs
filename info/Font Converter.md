@@ -63,6 +63,7 @@ How it works:
     <option value="ASCII">ASCII (32-127)</option>
     <option value="ASCIICAPS" selected>ASCII capitals (32-127)</option>
     <option value="ISO8859-1">ISO8859-1 / ISO Latin (32-255)</option>
+    <option value="ISO8859-8">ISO8859-8 / ISO Hebrew (32-255)</option>
     <option value="Numeric">Numeric (46-58)</option>
   </select><br/>
   Align to increase sharpness : <input type="checkbox" id="fontJitter"></input><br/>
@@ -79,6 +80,7 @@ var fontRanges = {
  "ASCII" : {min:32, max:127, txt:"This is a test of the font"},
  "ASCIICAPS" : {min:32, max:93, txt:"THIS IS A TEST OF THE FONT"},
  "ISO8859-1" : {min:32, max:255, txt:"This is a test of the font"},
+ "ISO8859-8" : {min:32, max:255, txt:"זות בדיקה של הפונט"},
  "Numeric" : {min:46, max:58, txt:"0.123456789:/"},
 };
 // Each character can be moved around slightly in order to ensure the maximum

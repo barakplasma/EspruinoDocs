@@ -63,6 +63,7 @@ How it works:
     <option value="ASCII">ASCII (32-127)</option>
     <option value="ASCIICAPS" selected>ASCII capitals (32-127)</option>
     <option value="ISO8859-1">ISO8859-1 / ISO Latin (32-255)</option>
+    <option value="ISO8859-8">ISO8859-8 / ISO Hebrew (1488-1514)</option>
     <option value="Numeric">Numeric (46-58)</option>
   </select><br/>
   Align to increase sharpness : <input type="checkbox" id="fontJitter"></input><br/>
@@ -79,6 +80,7 @@ var fontRanges = {
  "ASCII" : {min:32, max:127, txt:"This is a test of the font"},
  "ASCIICAPS" : {min:32, max:93, txt:"THIS IS A TEST OF THE FONT"},
  "ISO8859-1" : {min:32, max:255, txt:"This is a test of the font"},
+ "ISO8859-8" : {min:1488, max:1514, txt:"זות בדיקה של הפונט"},
  "Numeric" : {min:46, max:58, txt:"0.123456789:/"},
 };
 // Each character can be moved around slightly in order to ensure the maximum
@@ -192,7 +194,7 @@ function createFont(fontName, fontHeight, BPP, charMin, charMax) {
           if (y > maxY) maxY = y;
           if (y < minY) minY = y;
         }
-        //if (ch=="X".charCodeAt()) console.log(x,y,c);
+        if (ch=="X".charCodeAt()) console.log(x,y,c);
         s += " ,/#"[c>>(BPP-2)];
         var n = (x+(y*fontHeight))*4;
         var prevCol = 255 - (c << (8-BPP));
